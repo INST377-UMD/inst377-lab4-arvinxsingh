@@ -24,10 +24,10 @@
 
         <!-- Alert Me Section -->
         <div class="main-container">
-            <form>
+            <form id="alert-form">
                 <label for="nameForm">Name: </label>
-                <input type="text" required>
-                <button>Alert Me!</button>
+                <input type="text" id="nameInput" required>
+                <button type="button" onclick="alertMe()">Alert Me!</button>
             </form>
         </div>
 
@@ -50,6 +50,7 @@
             <button onclick="addText()">Add Text</button>
         </div>
 
+
         <!-- Change color function -->
         <!-- Adding the text to heading function -->
         <!-- Alert me function -->
@@ -71,14 +72,16 @@
                 heading.innerText = heading.innerText + " - Adding Text";
             }
 
-            function alertMe(){
-
+            function alertMe() {
+                let name = document.getElementById("nameInput").value;
+                if (name) {
+                    alert("Hi " + name + "!");
+                } 
             }
 
-            function textTester(){
+            function textTester() {
 
             }
-
 
         </script>
 
