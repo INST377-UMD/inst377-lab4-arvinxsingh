@@ -3,7 +3,7 @@
         <title>INST377 - Lab 4</title>
         <style>
             body {
-                background-color: rgb(136, 173, 196);
+                background-color: rgb(136, 173, 196); /* Initial color (blue) */
             }
             .main-container {
                 background-color: purple;
@@ -19,13 +19,13 @@
 
     <body>
         <header>
-            <h1>INST377 - Lab 4</h1>
+            <h1 id="page-heading">INST377 - Lab 4</h1>
         </header>
 
         <!-- Alert Me Section -->
         <div class="main-container">
             <form>
-                <label for="Name">Name: </label>
+                <label for="nameForm">Name: </label>
                 <input type="text" required>
                 <button>Alert Me!</button>
             </form>
@@ -34,7 +34,7 @@
         <!-- Text Tester Section -->
         <div class="main-container">
             <form>
-                <label for="Text">Text Tester:</label>
+                <label for="textForm">Text Tester:</label>
                 <input type="text" required>
                 <button>Validate Text</button>
             </form>
@@ -42,13 +42,31 @@
 
         <!-- Change Color Section -->
         <div class="main-container">
-            <button>Change Color</button>
+            <button onclick="changeColor()">Change Color</button>
         </div>
 
         <!-- Add Text Section -->
         <div class="main-container">
-            <button>Add Text</button>
+            <button onclick="addText()">Add Text</button>
         </div>
+
+        <!-- Change color function -->
+        <script type="text/javascript">
+            function changeColor() {
+                let currentColor = document.body.style.backgroundColor;
+
+                if (currentColor === "rgb(136, 173, 196)" || currentColor === "") {
+                    document.body.style.backgroundColor = "green";  // Change to green
+                } else {
+                    document.body.style.backgroundColor = "rgb(136, 173, 196)";  // Change back to blue
+                }
+            }
+
+            function addText() {
+                let heading = document.getElementById("page-heading");
+                heading.innerText = heading.innerText + " - Adding Text";
+            }
+        </script>
 
     </body>
 </html>
