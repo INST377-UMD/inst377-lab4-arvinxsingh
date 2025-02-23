@@ -62,9 +62,9 @@
                 let currentColor = document.body.style.backgroundColor;
 
                 if (currentColor === "rgb(136, 173, 196)" || currentColor === "") {
-                    document.body.style.backgroundColor = "green";  // Change to green
+                    document.body.style.backgroundColor = "green";  
                 } else {
-                    document.body.style.backgroundColor = "rgb(136, 173, 196)";  // Change back to blue
+                    document.body.style.backgroundColor = "rgb(136, 173, 196)";  
                 }
             }
             
@@ -85,8 +85,10 @@
                 let text = document.getElementById("textInput").value;
         
                 if (validationRegex.test(text)) {
-                    alert("How about...Nah!");
-                } 
+                    alert("Special characters are not allowed, Try Again");
+                } else {
+                    alert("Text has no special characters, Good JOb");
+                }
             }
 
         </script>
