@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <style>
+            body {
+                background-color: rgb(136, 173, 196); 
+            }
+            .main-container {
+                background-color: purple;
+                color: white;
+                border: 2px solid white;
+                padding: 10px;
+                border-radius: 15px;
+                margin: 10px;
+                width: 40%;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1 id="page-heading">INST377 - Lab 4</h1>
+        </header>
+
+        <!-- Alert Me Section -->
+        <div class="main-container">
+            <form id="alert-form">
+                <label for="nameForm">Name: </label>
+                <input type="text" id="nameInput" required>
+                <button type="button" onclick="alertMe()">Alert Me!</button>
+            </form>
+        </div>
+
+        <!-- Change Color Section -->
+        <div class="main-container">
+            <button onclick="changeColor()">Change Color</button>
+        </div>
+
+        <!-- Text Tester Section -->
+        <div class="main-container">
+            <form id="text-form">
+                <label for="textInput">Text Tester:</label>
+                <input type="text" id="textInput" required>
+                <button type="button" onclick="textTester()">Validate Text</button>
+            </form>
+        </div>
+
+        <!-- Add Text Section -->
+        <div class="main-container">
+            <button onclick="addText()">Add Text</button>
+        </div>
+
+
+        <!-- Change color function -->
+        <!-- Adding the text to heading function -->
+        <!-- Alert me function -->
+        <!-- Function to check the text  -->
+
+        <script type="text/javascript">
+            function changeColor() {
+                let currentColor = document.body.style.backgroundColor;
+
+                if (currentColor === "rgb(136, 173, 196)" || currentColor === "") {
+                    document.body.style.backgroundColor = "green";  
+                } else {
+                    document.body.style.backgroundColor = "rgb(136, 173, 196)";  
+                }
+            }
+            
+            function addText() {
+                let heading = document.getElementById("page-heading");
+                heading.innerText = heading.innerText + " - Adding Text";
+            }
+
+            function alertMe() {
+                let name = document.getElementById("nameInput").value;
+                if (name) {
+                    alert("Hi " + name + "!");
+                } 
+            }
+
+            function textTester() {
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                let text = document.getElementById("textInput").value;
+        
+                if (validationRegex.test(text)) {
+                    alert("Special characters are not allowed, Try Again");
+                } else {
+                    alert("Text has no special characters, Good JOb");
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
