@@ -39,10 +39,10 @@
 
         <!-- Text Tester Section -->
         <div class="main-container">
-            <form>
-                <label for="textForm">Text Tester:</label>
-                <input type="text" required>
-                <button>Validate Text</button>
+            <form id="text-form">
+                <label for="textInput">Text Tester:</label>
+                <input type="text" id="textInput" required>
+                <button type="button" onclick="textTester()">Validate Text</button>
             </form>
         </div>
 
@@ -81,7 +81,12 @@
             }
 
             function textTester() {
-
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                let text = document.getElementById("textInput").value;
+        
+                if (validationRegex.test(text)) {
+                    alert("How about...Nah!");
+                } 
             }
 
         </script>
